@@ -1,0 +1,41 @@
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 0.005rem 0.2rem 0.05rem #d3d3d3;
+  
+
+
+  // .header__container
+
+  &__container {
+    display: flex;
+    min-height: 62px;
+    align-items: center;
+    @media (max-width: 479.98px) {
+      flex-direction: column;
+		height: 72px;
+      row-gap: 10px;
+		margin: 10px 0px;
+    }
+  }
+
+  // .header__logo
+
+  &__logo {
+    position: relative;
+    z-index: 5;
+    img {
+      width: 160px;
+      height: 50px;
+    }
+  }
+
+  // .header__menu
+
+  &__menu {
+    flex: 1 1 auto;
+  }
+}

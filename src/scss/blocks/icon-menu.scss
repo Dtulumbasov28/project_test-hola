@@ -1,0 +1,45 @@
+.icon-menu {
+ 
+ 
+	  position: relative;
+	  flex: 0 0 30px;
+	  height: 18px;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+	  margin: 0px 0px 0px 20px;
+ 
+	  &::before,
+	  &::after {
+		 content: "";
+		 height: 2px;
+	  }
+ 
+	  // .icon-menu active
+ 
+	  &.active {
+		 left: 15px;
+		 top: 10px;
+		 
+		 &::before {
+			position: absolute;
+			width: 100%;
+			transform: translate(-50%, -50%) rotate(45deg);
+		 }
+ 
+		 &::after {
+			position: absolute;
+			width: 100%;
+			transform: translate(-50%, -50%) rotate(-45deg);
+		 }
+	  }
+ 
+	  & span {
+		 height: 2px;
+	  }
+ 
+	  &.active span {
+		 background-color: transparent;
+	  }
+	
+ }

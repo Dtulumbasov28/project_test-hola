@@ -1,0 +1,134 @@
+// Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:regular,italic,700);
+@font-face {
+  font-family: "Futura PT Bold";
+  src: url("FuturaPT-Bold.eot");
+  src: url("FuturaPT-Bold.eot?#iefix") format("embedded-opentype"),
+    url("FuturaPT-Bold.woff") format("woff"),
+    url("FuturaPT-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+$fontFamily: "Libre Baskerville", sans-serif;
+$fontSize: 16px; // где 14(px) - размер шрифта по умолчанию из макета
+
+// Основные цвета
+$mainColor: #232323;
+$mainPinkColor: #ec5863;
+// Цвет шрифта по умолчанию
+
+// НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
+// Минимальная ширина страницы
+$minWidth: 320px;
+// Ширина полотна (макета)
+$maxWidth: 1920px;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1087px;
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 30px;
+
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+$pc: em(
+  $containerWidth
+); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: 970px; // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: 750px; // Телефоны L
+$mobileSmall: 480px; // Телефоны S
+
+[class*="__container"] {
+  max-width: $maxWidthContainer;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+// PC
+@media (max-width: $maxWidthContainer) {
+  [class*="__container"] {
+    max-width: $tablet;
+  }
+}
+// Tablet
+@media (max-width: 991.98px) {
+  [class*="__container"] {
+    max-width: $mobile;
+  }
+}
+// Mobile
+@media (max-width: 767.98px) {
+  [class*="__container"] {
+    max-width: none;
+  }
+}
+
+// Минимальное обнуление стилей
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  line-height: 1;
+}
+body {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  color: $mainColor;
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+  color: #28ad3b;
+}
+
+// Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  // Прижимаем footer
+  > main {
+    flex: 1 1 auto;
+  }
+  // Фикс для слайдеров
+  > * {
+    min-width: 0;
+  }
+}
+
+// Ограничивающий контейнер ======================================================================================================================================================================================================================
+
+// Подключение стилей отдельных блоков
+@import "./blocks/header";
+@import "./blocks/icon-menu";
+@import "./blocks/menu";
+@import "./blocks/main";
+@import "./blocks/footer";
