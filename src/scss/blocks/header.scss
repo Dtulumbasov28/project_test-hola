@@ -1,12 +1,16 @@
 .header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
   top: 0;
   z-index: 50;
   box-shadow: 0 0.005rem 0.2rem 0.05rem #d3d3d3;
-  
+  background-color: #fff;
 
+  
+  @media (max-width: 991.98px) {
+    background-color: #cc0000;
+  }
 
   // .header__container
 
@@ -14,11 +18,12 @@
     display: flex;
     min-height: 62px;
     align-items: center;
+
     @media (max-width: 479.98px) {
       flex-direction: column;
-		height: 72px;
+      height: 72px;
       row-gap: 10px;
-		margin: 10px 0px;
+      margin: 10px 0px;
     }
   }
 

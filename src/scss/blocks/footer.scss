@@ -2,8 +2,14 @@
   padding: 20px 0px;
   background-color: #2b3139;
 
-  @media (max-width: 500px) {
-    padding: 30px 0;
+  @media (max-width: 991.98px) {
+    background-color: #fff;
+
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 50;
   }
 
   // .footer__container
@@ -20,8 +26,8 @@
     column-gap: 55px;
     row-gap: 20px;
 
-    @media (max-width: 500px) {
-      flex-direction: column;
+    @media (max-width: 991.98px) {
+      gap: 0;
     }
   }
 
@@ -39,9 +45,9 @@
       width: 160px;
       height: 50px;
     }
-    @media (max-width: 479.98px) {
-      flex: 0 0 40px;
-      overflow: hidden;
+
+    @media (max-width: 991.98px) {
+      display: none;
     }
   }
 
@@ -51,6 +57,10 @@
     font-family: "Futura PT";
     color: white;
     font-size: 12px;
+
+    @media (max-width: 991.98px) {
+      display: none;
+    }
   }
 
   // .footer__privacy-text
@@ -64,16 +74,51 @@
   // .footer__socials
 
   &__socials {
-    display: flex;
-    gap: 10px;
+  }
+
+  // .footer__socials-desktop
+
+  &__socials-desktop {
+    display: none;
+
+    @media (min-width: 991.98px) {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  // .footer__socials-tablet
+
+  &__socials-tablet {
+	display: none;
+    @media (max-width: 991.98px) {
+      display: flex;
+      gap: 25px;
+    }
   }
 
   // .footer__socials-link
 
   &__socials-link {
-    & img {
-      width: 16px;
-      height: 16px;
-    }
   }
+  &__socials-img {
+    width: 16px;
+    height: 16px;
+  }
+}
+.icon {
+  width: 26px;
+  height: 26px;
+}
+.facebook-icon {
+  fill: #46629b;
+}
+.twitter-icon {
+  fill: #59adeb;
+}
+.whatsapp-icon {
+  fill: #33d16b;
+}
+.pinterest-icon {
+  fill: #cf2120;
 }

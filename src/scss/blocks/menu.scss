@@ -10,6 +10,9 @@
 
     & span {
       color: #999;
+      @media (max-width: 991.98px) {
+        color: #fff;
+      }
     }
   }
 
@@ -20,6 +23,10 @@
     position: relative;
     font-size: 13px;
 
+    @media (max-width: 991.988px) {
+      color: #fff;
+    }
+
     cursor: pointer;
     font-weight: 500;
     letter-spacing: 1px;
@@ -27,6 +34,10 @@
     &:focus,
     &:hover {
       color: #cc0000;
+		@media (max-width: 991.988px) {
+			color: #fff;
+			border-bottom: 1px solid #fff;
+		 }
     }
   }
 }
